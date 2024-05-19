@@ -1,0 +1,50 @@
+.logoContainer {
+  background-color: transparent;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer__imgContainer {
+  background-color: transparent;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  padding: 2em 0;
+}
+
+.imgContainer__img {
+  background-color: transparent;
+  width: 20%;
+  filter: drop-shadow(5px 10px 8px #000000);
+  cursor: pointer;
+}
+
+.logoContainer__title {
+  background-color: transparent;
+  color: var(--white);
+}
+
+.logoContainer__title {
+  background-color: transparent;
+  color: var(--white);
+}
+
+.logoContainer__title::after {
+  background-color: transparent;
+  color: var(--white);
+  content: "_";
+  animation: blink 1.5s infinite;
+  animation-fill-mode: both;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
+}

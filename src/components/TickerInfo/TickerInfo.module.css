@@ -1,0 +1,38 @@
+.tickerInfoContainer {
+  width: 100%;
+  margin: 0 auto;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tickerInfoContainer__title {
+  color: var(--white);
+  background-color: transparent;
+}
+
+.tickerInfoContainer__information {
+  color: var(--black);
+  max-width: 300px;
+  background-color: var(--gray);
+  border-radius: 1.5rem;
+  padding: 0.5rem 1.7rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.tickerInfoContainer__information:hover {
+  outline: 1px solid var(--gray);
+}
+
+p {
+  font-weight: 900;
+}
+
+h2,
+p,
+span {
+  background-color: transparent;
+}

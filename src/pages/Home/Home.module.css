@@ -1,0 +1,57 @@
+.homeContainer {
+  background-image: url("../src/assets/background-image.jpg");
+  height: 100vh;
+  background-size: cover;
+  padding-top: 2rem;
+}
+
+.searchGraphContainer {
+  background-color: transparent;
+  display: flex;
+}
+
+.searchGraphContainer__navMenuTickerInfo {
+  width: 40%;
+  background-color: transparent;
+  position: relative;
+}
+
+.navMenuTickerInfo__navMenu,
+.navMenuTickerInfo__tickerInfo {
+  background-color: transparent;
+}
+
+.navMenuTickerInfo__tickerInfo {
+  width: 100%;
+  position: absolute;
+  top: 11rem
+}
+
+.graph {
+  width: 100%;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 1280px) {
+  .homeContainer {
+    height: 150vh;
+  }
+
+  .searchGraphContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navMenuTickerInfo__tickerInfo {
+    position: absolute;
+    top: 11rem
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .homeContainer {
+    height: 100vh;
+  }
+}
