@@ -13,4 +13,6 @@
   --white: #fefefe;
   --gray: #ededed9f;
 
+img {
+  max-width: 100%;
 }
