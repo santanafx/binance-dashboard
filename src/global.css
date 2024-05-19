@@ -12,6 +12,8 @@
   --black: #1b1b1c;
   --white: #fefefe;
   --gray: #ededed9f;
+  --grayTrans: #ededed4a;
+}
 
 img {
   max-width: 100%;
