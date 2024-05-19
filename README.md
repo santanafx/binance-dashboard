@@ -18,7 +18,6 @@ Para o desenvolvimento do projeto, foram escolhidas as seguintes tecnologias:
 
 <div style="display: flex; justify-content: center;">
   <img src='./public/images/readme/img1.jpg' style="margin-right: 10px;">
-  <img src='./public/images/readme/img2.jpg'>
 </div>
 
 ## Bibliotecas utilizadas
@@ -70,9 +69,11 @@ O projeto também inclui um widget do TradingView com várias funcionalidades pa
 
 ## Como me localizar no projeto?
 
-- Todos os componentes do projeto são renderizados em `./src/App`.
+- `./src/App` contém o provider do redux para gerenciamento de estado e o gerenciamento de rotas.
   - Todos os componentes podem ser encontrados na pasta `./src/components`
-    - Uma vez dentro do arquivo `./src/App` você pode navegar pelos componentes e realizar as alterações desejadas.
+    - Todas os páginas podem ser encontrados na pasta `./src/pages`
+      - Todo o gerenciamento de requisições com a API é feito utilizando o redux no arquivo `./src/services/services.ts`
+      - Todo o gerenciamento de estado é feito pelo redux utilizando reducers na pasta `./src/store/reducers`,ou seja, o projeto utiliza a arquitetura flux.
 
 ## Como instalar
 
