@@ -1,23 +1,13 @@
-import { createContext, Dispatch, PropsWithChildren, SetStateAction, useState } from "react";
+import { PropsWithChildren } from "react";
+import style from "./NavMenu.module.css";
 import SearchInput from "./SearchInput";
 
-interface NavMenuContextType {
-  symbol: string;
-  setSymbol: Dispatch<SetStateAction<string>>;
-}
-
-export const NavMenuContext = createContext<NavMenuContextType>({
-  symbol: "",
-  setSymbol: () => { }
-});
-
 export default function NavMenu({ children }: PropsWithChildren) {
-  const [symbol, setSymbol] = useState<string>("");
 
   return (
-    <NavMenuContext.Provider value={{ symbol, setSymbol }}>
+    <div className={style.navMenuContainer}>
       {children}
-    </NavMenuContext.Provider>
+    </div>
   );
 }
 
