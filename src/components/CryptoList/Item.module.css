@@ -1,0 +1,41 @@
+.itemContainer {
+  border-radius: 1.5rem;
+  padding: 1rem 1.2rem;
+  background-color: var(--grayTrans);
+  color: var(--white);
+  text-align: center;
+}
+
+.itemContainer:hover {
+  outline: 1px solid var(--gray);
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.itemContainer__text {
+  background-color: transparent;
+  text-align: start;
+}
+
+.itemSubtextContainer {
+  background-color: transparent;
+  display: flex;
+}
+
+.itemSubtextContainer__subtext {
+  background-color: transparent;
+  text-align: start;
+}
+
+.itemSubtextContainer__itemIcons {
+  background-color: transparent;
+}
+
+.itemVariationContainer {
+  background-color: transparent;
+}
+
+.itemVariationContainer__text {
+  background-color: transparent;
+  text-align: start;
+}
