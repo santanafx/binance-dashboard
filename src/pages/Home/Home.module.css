@@ -34,7 +34,7 @@
 
 @media screen and (max-width: 1280px) {
   .homeContainer {
-    height: 150vh;
+    height: 172vh;
   }
 
   .searchGraphContainer {
@@ -52,6 +52,6 @@
 
 @media screen and (max-width: 601px) {
   .homeContainer {
-    height: 100vh;
+    height: 131vh;
   }
 }
