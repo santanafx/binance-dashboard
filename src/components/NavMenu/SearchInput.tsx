@@ -15,6 +15,8 @@ export default function SearchInput() {
     const response = await getTickerInformation(symbol.toUpperCase())
     if (response.data) {
       dispatch(getTickerInfo(response.data))
+    } else {
+      console.log(response.error)
     }
   }
 
