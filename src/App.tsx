@@ -1,22 +1,33 @@
-import { Provider } from 'react-redux'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import Home from './pages/Home/Home'
-import PageNotFound from './pages/PageNotFound/PageNotFound'
-import { store } from './store/store'
+import { Provider } from 'react-redux';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Layout from './layout/Layout';
+import Home from './pages/Home/Home';
+import PageNotFound from './pages/PageNotFound/PageNotFound';
+import { store } from './store/store';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "*",
+        element: <PageNotFound />
+      }
+    ]
+  }
+]);
 
 function App() {
-
-  const router = createBrowserRouter([{
-    path: "/",
-    element: <Home />,
-    errorElement: <PageNotFound />
-  }])
-
   return (
     <Provider store={store}>
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router} />
     </Provider>
-  )
+  );
 }
 
-export default App
+export default App;
