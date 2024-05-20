@@ -1,3 +1,4 @@
+import { SkeletonTheme } from 'react-loading-skeleton';
 import { Provider } from 'react-redux';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Layout from './layout/Layout';
@@ -25,7 +26,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <SkeletonTheme baseColor='#9f9f9f' highlightColor='#585858'>
+        <RouterProvider router={router} />
+      </SkeletonTheme>
     </Provider>
   );
 }
