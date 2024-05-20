@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { HiSearch } from "react-icons/hi";
 import { useDispatch } from "react-redux";
 import { useGetExchangeInfoQuery, useLazyGetTickerInformationQuery } from "../../services/services";
-import { getSymbol, getTickerInfo } from "../../store/reducers/tickerInfo";
+import { getSymbol, getTickerInfo, isLoading } from "../../store/reducers/tickerInfo";
 import style from "./SearchInput.module.css";
 
 export default function SearchInput() {
@@ -12,8 +12,10 @@ export default function SearchInput() {
   const dispatch = useDispatch()
 
   const fetchDataTickerInfo = async (symbol: string) => {
+    dispatch(isLoading(true))
     const response = await getTickerInformation(symbol.toUpperCase())
     if (response.data) {
+      dispatch(isLoading(false))
       dispatch(getTickerInfo(response.data))
     } else {
       console.log(response.error)
