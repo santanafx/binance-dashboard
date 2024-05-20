@@ -3,6 +3,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 interface TickerInfoType {
   symbol: string
   selectedTickerInfo: SelectedTickerInfoType
+  isLoading: boolean | null
 }
 
 interface SelectedTickerInfoType {
@@ -53,7 +54,8 @@ const initialState: TickerInfoType = {
     symbol: "",
     volume: "",
     weightedAvgPrice: ""
-  }
+  },
+  isLoading: null
 }
 
 const tickerInfoSlice = createSlice({
@@ -66,9 +68,12 @@ const tickerInfoSlice = createSlice({
     getTickerInfo: (state, action: PayloadAction<SelectedTickerInfoType>) => {
       state.selectedTickerInfo = action.payload;
     },
+    isLoading: (state, action: PayloadAction<boolean>) => {
+      state.isLoading = action.payload
+    }
   }
 })
 
-export const { getSymbol, getTickerInfo } = tickerInfoSlice.actions;
+export const { getSymbol, getTickerInfo, isLoading } = tickerInfoSlice.actions;
 
 export default tickerInfoSlice.reducer;
