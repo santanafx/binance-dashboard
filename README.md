@@ -12,7 +12,7 @@ Para o desenvolvimento do projeto, foram escolhidas as seguintes tecnologias:
 
 ## Video do projeto
 
-<a href="https://youtu.be/_uzIHHMV9Lo">Video do projeto aqui</a>.
+<a href="https://youtu.be/Q0StGmah2mw">Video do projeto aqui</a>.
 
 #### Imagens
 
@@ -27,6 +27,7 @@ Para o desenvolvimento do projeto, foram escolhidas as seguintes tecnologias:
 3. `react-icons` - biblioteca que permite o uso de icones.
 4. `react-redux` - biblioteca que permite o gerenciamento de estado entre o Redux e React.
 5. `@reduxjs/toolkit` - biblioteca que simplifica e otimiza todo o processo de gerenciamento de estado que utilizam o Redux.
+6. `react-loading-skeleton` - biblioteca que ajuda a criar o shimer effect para estados que estão undefined.
 
 #### Objetivo
 
