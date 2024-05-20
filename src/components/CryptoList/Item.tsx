@@ -1,5 +1,7 @@
 import { useRef, useState } from "react"
 import { MdOutlineArrowDropDown, MdOutlineArrowDropUp } from "react-icons/md"
+import Skeleton from "react-loading-skeleton"
+import "react-loading-skeleton/dist/skeleton.css"
 import { useDispatch, useSelector } from "react-redux"
 import useWebSocket from "react-use-websocket"
 import { getInitialPrice, getWebSocketTradeResponse } from "../../store/reducers/cryptoInfo"
@@ -44,22 +46,26 @@ export default function Item({ cryptoSymbolText, index }: ItemProps) {
 
   const colorGreen = '#1bc700'
   const colorRed = '#ff2f00d2'
-  const currentPrice = socketResponse?.p ? Number(socketResponse.p).toFixed(2) : "N/A";
-  const variation = socketResponse?.p && initialPriceState !== null ? (((Number(socketResponse.p) * 100) / initialPriceState) - 100).toFixed(2) : "N/A";
+  const currentPrice = socketResponse?.p ? Number(socketResponse.p).toFixed(2) : undefined;
+  const variation = socketResponse?.p && initialPriceState !== null ? (((Number(socketResponse.p) * 100) / initialPriceState) - 100).toFixed(2) : undefined;
 
   return (
     <div className={style.itemContainer}>
       <h3 className={style.itemContainer__text}>{cryptoSymbolText.toLocaleUpperCase()}</h3>
       <div className={style.itemSubtextContainer}>
-        <h4 className={style.itemSubtextContainer__subtext} style={{ color: Number(socketResponse?.p) >= previousCryptoValue.current ? colorGreen : colorRed }}>{currentPrice}</h4>
-        {Number(socketResponse?.p) >= previousCryptoValue.current ? (
-          <MdOutlineArrowDropUp className={style.itemSubtextContainer__itemIcons} style={{ color: Number(socketResponse?.p) >= previousCryptoValue.current ? colorGreen : colorRed }} />
+        <h4 className={style.itemSubtextContainer__subtext} style={{ color: Number(socketResponse?.p) >= previousCryptoValue.current ? colorGreen : colorRed }}>{currentPrice || <Skeleton count={1} width={"50px"} />}</h4>
+        {currentPrice !== undefined ? (
+          Number(currentPrice) >= previousCryptoValue.current ? (
+            <MdOutlineArrowDropUp className={style.itemSubtextContainer__itemIcons} style={{ color: colorGreen }} />
+          ) : (
+            <MdOutlineArrowDropDown className={style.itemSubtextContainer__itemIcons} style={{ color: colorRed }} />
+          )
         ) : (
-          <MdOutlineArrowDropDown className={style.itemSubtextContainer__itemIcons} style={{ color: Number(socketResponse?.p) >= previousCryptoValue.current ? colorGreen : colorRed }} />
+          <Skeleton count={1} width={"20px"} />
         )}
       </div>
       <div className={style.itemVariationContainer}>
-        <h4 className={style.itemVariationContainer__text} style={{ color: Number(variation) > 0 ? colorGreen : colorRed }}>{variation}%</h4>
+        {variation !== undefined ? (<h4 className={style.itemVariationContainer__text} style={{ color: Number(variation) > 0 ? colorGreen : colorRed }}>{variation}%</h4>) : (<Skeleton count={1} width={"90px"} />)}
       </div>
     </div>
 
