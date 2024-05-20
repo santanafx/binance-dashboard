@@ -6,7 +6,7 @@ import style from "./Home.module.css"
 
 export default function Home() {
   return (
-    <div className={style.homeContainer}>
+    <main className={style.homeContainer}>
       <CryptoList>
         <CryptoList.Item cryptoSymbolText="btcusdt" index={0} />
         <CryptoList.Item cryptoSymbolText="ethusdt" index={1} />
@@ -15,19 +15,19 @@ export default function Home() {
       </CryptoList>
       <div className={style.searchGraphContainer}>
         <div className={style.searchGraphContainer__navMenuTickerInfo}>
-          <div className={style.navMenuTickerInfo__navMenu}>
+          <section className={style.navMenuTickerInfo__navMenu}>
             <NavMenu>
               <NavMenu.SearchInput />
             </NavMenu>
-          </div>
-          <div className={style.navMenuTickerInfo__tickerInfo}>
+          </section>
+          <section className={style.navMenuTickerInfo__tickerInfo}>
             <TickerInfo />
-          </div>
+          </section>
         </div>
-        <div className={style.searchGraphContainer__graph}>
+        <section className={style.searchGraphContainer__graph}>
           <TradingViewWidget ticker={"btcusdt"} />
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   )
 }

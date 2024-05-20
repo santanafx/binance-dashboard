@@ -11,11 +11,11 @@ export default function Logo() {
   }
 
   return (
-    <div className={style.logoContainer}>
+    <header className={style.logoContainer}>
       <div className={style.logoContainer__imgContainer}>
         <img className={style.imgContainer__img} src={logo} alt="Application logo." onClick={() => handleGoToHomePage()} />
       </div>
       <h1 className={style.logoContainer__title}>Binance App</h1>
-    </div>
+    </header>
   )
 }

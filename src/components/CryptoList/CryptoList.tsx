@@ -5,9 +5,9 @@ import Item from "./Item"
 export default function CryptoList({ children }: PropsWithChildren) {
 
   return (
-    <div className={style.cryptoListContainer}>
+    <section className={style.cryptoListContainer}>
       {children}
-    </div>
+    </section>
   )
 }
 

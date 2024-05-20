@@ -5,7 +5,7 @@ import style from "./Footer.module.css"
 
 export default function Footer() {
   return (
-    <div className={style.footerContainer}>
+    <footer className={style.footerContainer}>
       <div className={style.footerContainer__imgContainer}>
         <img className={style.imgContainer__img} src={logo} alt="Application logo." />
       </div>
@@ -36,6 +36,6 @@ export default function Footer() {
         <a className={style.column__option}>Ideas</a>
         <a className={style.column__option}>Scripts</a>
       </div>
-    </div>
+    </footer>
   )
 }
